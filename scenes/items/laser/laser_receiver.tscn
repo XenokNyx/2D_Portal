@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://do548ny27h8s6"]
+
+[ext_resource type="Texture2D" uid="uid://cpcp3wd7rlyeg" path="res://assets/sprites/LaserReceiver.png" id="1_4ut4g"]
+[ext_resource type="Script" path="res://scenes/items/laser/LaserReceiver.cs" id="2_fqmru"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_34y4p"]
+size = Vector2(8, 46)
+
+[node name="LaserReceiver" type="Area2D" groups=["LaserReceiver"]]
+z_index = 6
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("2_fqmru")
+_unPressed = PackedVector2Array(0, 0, 0, 64)
+_pressed = PackedVector2Array(64, 0, 64, 64)
+
+[node name="LaserReceiver" type="Sprite2D" parent="."]
+texture = ExtResource("1_4ut4g")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="Back" type="Sprite2D" parent="LaserReceiver"]
+z_index = -2
+texture = ExtResource("1_4ut4g")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 64, 64, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(5, 32)
+shape = SubResource("RectangleShape2D_34y4p")
+debug_color = Color(0, 0.701961, 0.4, 0.419608)

@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://bfl0rxw3gqbmy"]
+
+[ext_resource type="PackedScene" uid="uid://cmw5ag0xil5ap" path="res://scenes/play/map_base.tscn" id="1_sdntl"]
+[ext_resource type="PackedScene" uid="uid://wvpa05ugcv0r" path="res://scenes/items/box/box.tscn" id="2_sfcg8"]
+[ext_resource type="PackedScene" uid="uid://cajvnmjkpy763" path="res://scenes/play/map_05.tscn" id="2_v22oc"]
+[ext_resource type="PackedScene" uid="uid://dhb14ncey66s4" path="res://scenes/items/button/button.tscn" id="3_yr4ad"]
+[ext_resource type="PackedScene" uid="uid://dmn1jcpyyhnj2" path="res://scenes/items/door/door.tscn" id="4_dvbq5"]
+[ext_resource type="PackedScene" uid="uid://ddtet4f5ld385" path="res://scenes/items/room_check/room_check.tscn" id="5_ufu5j"]
+[ext_resource type="PackedScene" uid="uid://be4b2nct1p18x" path="res://scenes/items/field/field.tscn" id="7_wjkpl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1ol5s"]
+size = Vector2(50, 197)
+
+[node name="map_base" instance=ExtResource("1_sdntl")]
+
+[node name="TileMap2" parent="." index="0"]
+layer_0/tile_data = PackedInt32Array(-1, 131072, 3, 65535, 0, 2, 131071, 131072, 2, 65536, 0, 3, 0, 196608, 1, -65536, 131072, 0, -131071, 196608, 0, -65535, 65536, 3, 1, 0, 3, 65537, 65536, 0, -65537, 0, 0, -131072, 196608, 3, -196608, 131072, 1, -196609, 196608, 3, -262144, 196608, 3, -327679, 131072, 3, -327678, 65536, 2, -262142, 65536, 2, -262143, 131072, 0, -327680, 196608, 0, -262145, 0, 1, -327681, 65536, 2, -393216, 131072, 2, -393215, 65536, 3, -393214, 0, 2, -655356, 196608, 1, -589820, 65536, 3, -524284, 196608, 3, -524283, 65536, 1, -655355, 0, 1, -589819, 65536, 0, -655354, 131072, 2, -589818, 196608, 3, -524282, 131072, 0, -458750, 196608, 3, -524286, 196608, 0, -589822, 196608, 2, -655358, 0, 2, -720894, 131072, 1, -720895, 65536, 3, -720896, 0, 0, -655361, 196608, 0, -589825, 196608, 0, -524289, 196608, 3, -458753, 196608, 1, -393217, 65536, 2, -458752, 0, 0, -524287, 0, 0, -589823, 65536, 1, -655359, 0, 0, -655360, 131072, 0, -589824, 196608, 1, -524288, 65536, 1, -458751, 131072, 0, -786432, 196608, 1, -786433, 65536, 2, -851968, 0, 2, -851967, 0, 0, -917503, 196608, 1, -983039, 196608, 0, -1048575, 131072, 2, -1048576, 0, 0, -983041, 65536, 2, -917505, 131072, 0, -851969, 0, 2, -917504, 196608, 2, -983040, 65536, 1, -655357, 4, 0, -589821, 4, 1, -524285, 4, 2)
+layer_1/tile_data = PackedInt32Array(-720897, 196609, 7, -720898, 65537, 5, -655362, 1, 5, -589826, 1, 5, -524290, 1, 5, -458754, 1, 5, -393218, 1, 5, -327682, 1, 5, -262146, 1, 5, -196610, 1, 5, -131074, 65537, 5, -131073, 196609, 7, -65538, 1, 5, -2, 1, 5, 65534, 1, 5, 131070, 1, 5, 196606, 65537, 6, 196607, 131073, 7, 131072, 131073, 7, 131073, 131073, 7, 131074, 196609, 6, 65538, 1, 5, 2, 1, 5, -65534, 1, 5, -131070, 1, 5, -196606, 131073, 1966084, -196607, 65537, 7, -786431, 65537, 7, -786430, 131073, 6, -786429, 196609, 4, -720893, 65537, 917510, -393216, 65538, 3, -393215, 131074, 3, -327681, 65538, 327683, -393213, 1, 1769477, -327677, 1, 1, -262141, 1, 1, -196605, 196609, 2, -458749, 65537, 983044, -720892, 131073, 3, -720891, 131073, 3, -720890, 131073, 3, -720889, 196609, 0, -655353, 1, 1, -589817, 1, 1, -524281, 1, 1, -458745, 196609, 2, -458746, 131073, 3, -458747, 131073, 3, -458748, 131073, 3, -851966, 1, 5, -917502, 1, 5, -983038, 1, 5, -1048574, 1, 5, -1114110, 196609, 4, -1114111, 131073, 7, -1114112, 131073, 7, -1048577, 131073, 7, -1048578, 65537, 4, -983042, 1, 5, -917506, 1, 5, -851970, 1, 5, -786434, 1, 5)
+
+[node name="Elevator" parent="." index="1"]
+position = Vector2(0, -896)
+rotation = -1.57079
+nextMap = ExtResource("2_v22oc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes" index="0"]
+position = Vector2(224, -541.5)
+shape = SubResource("RectangleShape2D_1ol5s")
+debug_color = Color(0.701961, 0, 0.0588235, 0.419608)
+
+[node name="Box" parent="." index="3" instance=ExtResource("2_sfcg8")]
+position = Vector2(358, -547)
+
+[node name="Button" parent="." index="4" instance=ExtResource("3_yr4ad")]
+position = Vector2(0, -576)
+
+[node name="Door" parent="." index="5" instance=ExtResource("4_dvbq5")]
+position = Vector2(0, -768)
+_listeningPaths = Array[NodePath]([NodePath("../Button"), NodePath("../RoomCheck2")])
+
+[node name="Door2" parent="." index="6" instance=ExtResource("4_dvbq5")]
+position = Vector2(0, -192)
+_listeningPaths = Array[NodePath]([NodePath("../RoomCheck")])
+
+[node name="RoomCheck" parent="." index="7" instance=ExtResource("5_ufu5j")]
+position = Vector2(0, -192)
+_defaultState = true
+
+[node name="RoomCheck2" parent="." index="8" instance=ExtResource("5_ufu5j")]
+position = Vector2(0, -768)
+_defaultState = true
+
+[node name="Field2" parent="." index="9" instance=ExtResource("7_wjkpl")]
+position = Vector2(-64, -832)
+
+[node name="Field3" parent="." index="10" instance=ExtResource("7_wjkpl")]
+position = Vector2(0, -832)
+
+[node name="Field4" parent="." index="11" instance=ExtResource("7_wjkpl")]
+position = Vector2(64, -832)

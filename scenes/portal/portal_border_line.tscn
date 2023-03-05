@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cdv0776vy3ysd"]
+
+[node name="PortalBorderLine" type="Line2D"]
+width = 2.5
+default_color = Color(0, 0, 0, 1)
+begin_cap_mode = 2
+end_cap_mode = 2

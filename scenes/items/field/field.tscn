@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://be4b2nct1p18x"]
+
+[ext_resource type="Script" path="res://scenes/items/field/PortalField.cs" id="1_hnqpl"]
+[ext_resource type="Texture2D" uid="uid://dyrgqedjwo5ko" path="res://assets/sprites/ParticleTexture.png" id="1_sc834"]
+[ext_resource type="Texture2D" uid="uid://djhilxioh7oxj" path="res://assets/sprites/PortalField.png" id="2_fyegb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xdjq"]
+size = Vector2(64, 14)
+
+[sub_resource type="Gradient" id="Gradient_nru1d"]
+colors = PackedColorArray(0.464844, 0.464844, 0.464844, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ol383"]
+gradient = SubResource("Gradient_nru1d")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_eq145"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 8, 1)
+particle_flag_disable_z = true
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 64.0
+initial_velocity_max = 64.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+color = Color(0.654902, 1, 0.984314, 1)
+color_initial_ramp = SubResource("GradientTexture1D_ol383")
+
+[node name="Field" type="Area2D" node_paths=PackedStringArray("_particles1", "_particles2") groups=["BlockPortal"]]
+z_index = 50
+collision_layer = 128
+collision_mask = 18
+script = ExtResource("1_hnqpl")
+_particles1 = NodePath("GPUParticles2D")
+_particles2 = NodePath("GPUParticles2D2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(32, 32)
+shape = SubResource("RectangleShape2D_8xdjq")
+debug_color = Color(0.0705882, 0.701961, 0, 0.419608)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(0, 32)
+amount = 32
+process_material = SubResource("ParticleProcessMaterial_eq145")
+texture = ExtResource("1_sc834")
+local_coords = true
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="."]
+position = Vector2(64, 32)
+rotation = 3.14159
+amount = 32
+process_material = SubResource("ParticleProcessMaterial_eq145")
+texture = ExtResource("1_sc834")
+local_coords = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.407843)
+texture = ExtResource("2_fyegb")
+centered = false

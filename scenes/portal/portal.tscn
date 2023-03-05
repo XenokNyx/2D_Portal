@@ -1,0 +1,106 @@
+[gd_scene load_steps=14 format=3 uid="uid://cltvt2s4o75ha"]
+
+[ext_resource type="Script" path="res://scenes/portal/Portal.cs" id="2_8dpgg"]
+[ext_resource type="Texture2D" uid="uid://bvorbokglukm2" path="res://assets/sprites/Portal.png" id="2_ivhap"]
+[ext_resource type="Script" path="res://scenes/portal/PortalCopyMask.cs" id="3_2ltka"]
+[ext_resource type="Shader" path="res://scenes/portal/VisibleMask.gdshader" id="3_tap1u"]
+[ext_resource type="Script" path="res://scenes/portal/PortalParticles.cs" id="4_haic4"]
+[ext_resource type="Texture2D" uid="uid://dpcap1ocwobvo" path="res://icon.svg" id="4_hxwl4"]
+[ext_resource type="Script" path="res://scenes/portal/PortalBorder.cs" id="6_wiil1"]
+[ext_resource type="PackedScene" uid="uid://cdv0776vy3ysd" path="res://scenes/portal/portal_border_line.tscn" id="7_hisaa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_smbu5"]
+shader = ExtResource("3_tap1u")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l4fer"]
+size = Vector2(62, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hbq50"]
+size = Vector2(48, 13)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_13dwt"]
+resource_local_to_scene = true
+emission_shape = 3
+emission_box_extents = Vector3(32, 1, 1)
+particle_flag_disable_z = true
+direction = Vector3(0, -1, 0)
+spread = 5.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_max = 15.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 2.0
+scale_max = 2.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rdjtq"]
+size = Vector2(8, 7)
+
+[node name="Portal" type="Area2D" groups=["PortalArea"]]
+z_index = 100
+collision_layer = 4
+collision_mask = 18
+script = ExtResource("2_8dpgg")
+_visibleMaskMaterial = SubResource("ShaderMaterial_smbu5")
+_wallCollisionLayer = 1
+MaxRecursivePortals = 15
+
+[node name="BlockPortal" type="Area2D" parent="." groups=["BlockPortal"]]
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BlockPortal"]
+position = Vector2(32, -3)
+shape = SubResource("RectangleShape2D_l4fer")
+debug_color = Color(0.701961, 0.631373, 0, 0.419608)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(32, -2.5)
+shape = SubResource("RectangleShape2D_hbq50")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_ivhap")
+centered = false
+offset = Vector2(0, -64)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." node_paths=PackedStringArray("_portal")]
+position = Vector2(32, 0)
+amount = 800
+process_material = SubResource("ParticleProcessMaterial_13dwt")
+lifetime = 0.3
+script = ExtResource("4_haic4")
+_portal = NodePath("..")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(60, 0)
+shape = SubResource("RectangleShape2D_rdjtq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(4, 0)
+shape = SubResource("RectangleShape2D_rdjtq")
+
+[node name="CopyMask" type="Polygon2D" parent="." node_paths=PackedStringArray("_portal")]
+show_behind_parent = true
+clip_children = 1
+polygon = PackedVector2Array(-20, 0, -20, -37, 84, -37, 84, 0, 32.5, 0)
+script = ExtResource("3_2ltka")
+_portal = NodePath("..")
+
+[node name="Sprite2D" type="Sprite2D" parent="CopyMask"]
+position = Vector2(16, 6.5)
+scale = Vector2(0.0859375, 0.117188)
+texture = ExtResource("4_hxwl4")
+
+[node name="PortalBorder" type="Node2D" parent="." node_paths=PackedStringArray("_portal")]
+visibility_layer = 2
+script = ExtResource("6_wiil1")
+_portal = NodePath("..")
+_linePck = ExtResource("7_hisaa")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="SubViewport"]

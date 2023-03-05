@@ -1,0 +1,104 @@
+[gd_scene load_steps=9 format=3 uid="uid://cv3ufejb6vqhj"]
+
+[ext_resource type="PackedScene" uid="uid://cmw5ag0xil5ap" path="res://scenes/play/map_base.tscn" id="1_7pvsc"]
+[ext_resource type="PackedScene" uid="uid://du23tlot3f338" path="res://scenes/items/laser/laser_base.tscn" id="2_4mxet"]
+[ext_resource type="PackedScene" uid="uid://dmn1jcpyyhnj2" path="res://scenes/items/door/door.tscn" id="5_4hgkm"]
+[ext_resource type="PackedScene" uid="uid://be4b2nct1p18x" path="res://scenes/items/field/field.tscn" id="5_6wxtp"]
+[ext_resource type="PackedScene" uid="uid://cdj7wff235la5" path="res://scenes/items/box/laser_box.tscn" id="5_k0m1b"]
+[ext_resource type="PackedScene" uid="uid://dhb14ncey66s4" path="res://scenes/items/button/button.tscn" id="6_8p42l"]
+[ext_resource type="PackedScene" uid="uid://do548ny27h8s6" path="res://scenes/items/laser/laser_receiver.tscn" id="7_a8nch"]
+[ext_resource type="PackedScene" uid="uid://c303xdl11wais" path="res://scenes/items/cable/Cable.tscn" id="8_1wudh"]
+
+[node name="map_base" instance=ExtResource("1_7pvsc")]
+
+[node name="TileMap2" parent="." index="0"]
+layer_0/tile_data = PackedInt32Array(-1, 0, 0, 0, 131072, 3, -65536, 196608, 3, 65535, 196608, 0, -65535, 196608, 0, 1, 131072, 0, 2, 65536, 2, -131069, 131072, 2, 131075, 196608, 0, 65539, 0, 0, 3, 65536, 0, 196611, 65536, 1, 196612, 131072, 2, 196617, 0, 0, 196616, 65536, 0, 196615, 0, 0, 196614, 65536, 2, 196613, 196608, 3, 196618, 196608, 1, 65546, 131072, 1, 131082, 0, 3, -196599, 196608, 0, -131063, 131072, 0, -65526, 196608, 3, 10, 196608, 3, -131062, 0, 3, -196598, 196608, 2, -196600, 131072, 0, -196604, 65536, 1, -196603, 65536, 3, -196602, 0, 3, -196601, 65536, 1, -196605, 196608, 2, 131081, 65536, 1, 65545, 196608, 0, 9, 196608, 3, -65527, 196608, 1, 131080, 196608, 2, 65544, 196608, 0, 8, 65536, 2, -65528, 131072, 1, -131064, 0, 3, 131079, 0, 2, 65543, 196608, 1, 7, 0, 0, -65529, 196608, 3, -131065, 196608, 0, 131078, 0, 0, 65542, 131072, 1, 6, 196608, 0, -131066, 131072, 2, 131077, 131072, 0, 65541, 196608, 0, 5, 0, 0, -131067, 131072, 3, 131076, 65536, 0, 65540, 0, 2, 4, 0, 0, -131068, 0, 1, -65533, 131072, 3, -65532, 65536, 1, -65530, 0, 3, -65531, 196608, 3, -262141, 131072, 3, -327677, 131072, 0, -393213, 0, 2, -458749, 65536, 3, -458748, 131072, 3, -458747, 65536, 3, -393211, 0, 1, -327675, 65536, 0, -262139, 131072, 2, -262140, 65536, 0, -327676, 196608, 1, -393212, 0, 1, 11, 65536, 3, 65547, 196608, 1, 131083, 0, 1, 196619, 196608, 1, 196620, 0, 1, 196621, 196608, 3, 196622, 131072, 3, 131086, 196608, 1, 65550, 65536, 0, 14, 196608, 0, 13, 0, 0, 12, 0, 0, 131084, 196608, 3, 131085, 196608, 2, 65549, 196608, 1, 65548, 0, 3, -65525, 65536, 2, -131061, 65536, 1, -196597, 65536, 1, -262133, 0, 0, -327669, 0, 0, -393205, 65536, 1, -458741, 0, 1, -458740, 131072, 3, -393204, 196608, 2, -327668, 196608, 1, -196596, 131072, 0, -262132, 131072, 0, -131060, 196608, 3, -65524, 196608, 2, -196595, 0, 3, -262131, 131072, 1, -196594, 131072, 2, -131058, 131072, 2, -65522, 65536, 1, -262130, 65536, 1, -131059, 196608, 2, -65523, 0, 1, -327670, 131072, 2, -327671, 0, 3, -327672, 0, 0, -327673, 131072, 3, -393209, 0, 0, -458746, 0, 0, -458745, 131072, 0, -458744, 0, 2, -458743, 131072, 2, -393207, 0, 2, -393206, 0, 3, -458742, 131072, 1, -393208, 196608, 0, -131071, 65536, 0, -131072, 131072, 3, -65537, 65536, 2, -65534, 196608, 1, 131071, 65536, 0, 65536, 131072, 0, 65537, 131072, 3, -458739, 0, 3, -458738, 196608, 3, -458737, 0, 3, -458736, 65536, 2, -458735, 131072, 2, -524271, 65536, 0, -524272, 0, 2, -524273, 131072, 1, -393201, 131072, 2, -393200, 65536, 3, -393199, 131072, 3, -524281, 0, 3, -524280, 0, 1, -524278, 65536, 1, -524279, 65536, 2, -524276, 196608, 0, -524277, 196608, 3, -524275, 131072, 3, -196593, 65536, 1, -131057, 0, 3, 15, 65536, 0, -65521, 0, 1, 65551, 65536, 0, 131088, 131072, 1, 65552, 131072, 1, 16, 196608, 1, -65520, 131072, 0, -131056, 0, 0, -196592, 131072, 3, 131087, 65536, 1, 196623, 131072, 2, 196624, 65536, 1, -262127, 0, 1, -196591, 65536, 3, -131055, 65536, 3, -65519, 0, 3, 17, 196608, 0, 65553, 131072, 1, 131089, 65536, 0, 196625, 131072, 0)
+layer_1/tile_data = PackedInt32Array(-131070, 1, 6, 65534, 1, 5, -2, 1, 5, 131070, 1, 5, 131074, 196609, 5, 65538, 1, 1769473, 196610, 1, 1703937, 262146, 65537, 2, 262148, 131073, 3, 262147, 131073, 3, 262154, 327681, 3, 262153, 131073, 3, 262152, 131073, 3, 262151, 131073, 3, 262150, 131073, 655367, 262149, 131073, 3, -262138, 524289, 917507, -262137, 589825, 2752515, -262136, 589825, 2752515, -262135, 589825, 3801091, -262134, 589825, 7, -262142, 1, 5, -196606, 196609, 5, 131082, 524289, 1, 196618, 524289, 1, -131062, 1, 4, -65526, 1, 6, -65530, 1, 7, -327674, 262145, 5, -393210, 1, 5, -458746, 1, 5, -524282, 196609, 5, -524283, 131073, 7, -524284, 131073, 7, -524285, 131073, 7, -524286, 65537, 4, -458750, 1, 5, -393214, 1, 5, -327678, 1, 5, -524275, 524289, 7, -393203, 524289, 4, -327667, 524289, 5, 262155, 393217, 1966087, 262156, 131073, 7, 262157, 131073, 7, 262158, 131073, 7, -327665, 655361, 2555908, -327666, 393217, 12779525, 65546, 524289, 851972, 2, 1, 0, -196607, 131073, 7, -196608, 131073, 7, -131073, 131073, 7, -131074, 65537, 4, -65538, 1, 5, 196606, 65537, 6, 196607, 131073, 7, 131072, 131073, 7, 131073, 131073, 7, -327664, 655361, 4128772, -327663, 655361, 4, -327662, 458753, 5, -393198, 1, 5, -458734, 1, 5, -524270, 1, 5, -589806, 196609, 4, -589807, 131073, 7, -589808, 131073, 7, -589809, 131073, 7, -589810, 393217, 4, -524274, 720897, 7, -393202, 720897, 4, -589818, 65537, 4, -589817, 131073, 7, -589816, 131073, 7, -589814, 131073, 7, -589815, 131073, 7, -589813, 131073, 7, -589812, 131073, 7, -589811, 327681, 4, -327673, 655361, 4, -327672, 655361, 4, -327671, 655361, 4, -327670, 655361, 4, 65547, 720897, 1114116, 131083, 720897, 3538950, 196619, 720897, 3538950, 262161, 131073, 7, -262127, 589825, 3801091, 262159, 131073, 7, 262160, 131073, 7, -262131, 524289, 7, -262130, 589825, 3080199, -262129, 589825, 3, -262128, 589825, 2686979, -327669, 720897, 4, -262133, 720897, 7, -262126, 458753, 6, -196590, 1, 5, -131054, 1, 5, -65518, 1, 5, 18, 1, 5, 65554, 1, 5, 131090, 1, 5, 196626, 1, 5, 262162, 196609, 6)
+
+[node name="Elevator" parent="." index="1"]
+position = Vector2(1024, -448)
+
+[node name="LaserBase" parent="." index="3" instance=ExtResource("2_4mxet")]
+position = Vector2(192, 128)
+
+[node name="LaserBox" parent="." index="4" instance=ExtResource("5_k0m1b")]
+position = Vector2(539, 34)
+
+[node name="LaserBox2" parent="." index="5" instance=ExtResource("5_k0m1b")]
+position = Vector2(1024, -128)
+
+[node name="Fields" type="Node" parent="." index="6"]
+
+[node name="Field" parent="Fields" index="0" instance=ExtResource("5_6wxtp")]
+position = Vector2(448, 192)
+rotation = 1.57079
+
+[node name="Field2" parent="Fields" index="1" instance=ExtResource("5_6wxtp")]
+position = Vector2(448, 128)
+rotation = 1.57079
+
+[node name="Field3" parent="Fields" index="2" instance=ExtResource("5_6wxtp")]
+position = Vector2(448, 64)
+rotation = 1.57079
+
+[node name="Field8" parent="Fields" index="3" instance=ExtResource("5_6wxtp")]
+position = Vector2(960, -448)
+rotation = 1.57079
+
+[node name="Field4" parent="Fields" index="4" instance=ExtResource("5_6wxtp")]
+position = Vector2(448, 0)
+rotation = 1.57079
+
+[node name="Field5" parent="Fields" index="5" instance=ExtResource("5_6wxtp")]
+position = Vector2(512, 0)
+rotation = 3.14159
+
+[node name="Field6" parent="Fields" index="6" instance=ExtResource("5_6wxtp")]
+position = Vector2(576, 0)
+rotation = 3.14159
+
+[node name="Field7" parent="Fields" index="7" instance=ExtResource("5_6wxtp")]
+position = Vector2(640, 0)
+rotation = 3.14159
+
+[node name="Door" parent="." index="7" instance=ExtResource("5_4hgkm")]
+position = Vector2(704, -192)
+rotation = 1.5708
+_listeningPaths = Array[NodePath]([NodePath("../LaserReceiver")])
+
+[node name="Door3" parent="." index="8" instance=ExtResource("5_4hgkm")]
+position = Vector2(896, -448)
+rotation = 1.5708
+_listeningPaths = Array[NodePath]([NodePath("../LaserReceiver2")])
+
+[node name="Door2" parent="." index="9" instance=ExtResource("5_4hgkm")]
+position = Vector2(704, 0)
+rotation = 1.5708
+_listeningPaths = Array[NodePath]([NodePath("../Button")])
+
+[node name="Button" parent="." index="10" instance=ExtResource("6_8p42l")]
+position = Vector2(768, 0)
+
+[node name="LaserReceiver" parent="." index="11" instance=ExtResource("7_a8nch")]
+position = Vector2(320, -448)
+rotation = 1.5708
+
+[node name="LaserReceiver2" parent="." index="12" instance=ExtResource("7_a8nch")]
+position = Vector2(448, -448)
+
+[node name="Cables" type="Node" parent="." index="13"]
+
+[node name="Cable" parent="Cables" index="0" instance=ExtResource("8_1wudh")]
+position = Vector2(256, -443)
+points = PackedVector2Array(0, 0, 0, 320, 384, 320)
+_listeningPaths = Array[NodePath]([NodePath("../../LaserReceiver")])
+
+[node name="Cable2" parent="Cables" index="1" instance=ExtResource("8_1wudh")]
+position = Vector2(448, -453)
+points = PackedVector2Array(0, 0, 384, 0)
+_listeningPaths = Array[NodePath]([NodePath("../../LaserReceiver2")])
+
+[node name="Cable3" parent="Cables" index="2" instance=ExtResource("8_1wudh")]
+position = Vector2(768, -5)
+points = PackedVector2Array(0, 0, -64, 0)
+_listeningPaths = Array[NodePath]([NodePath("../../Button")])

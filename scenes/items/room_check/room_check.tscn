@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddtet4f5ld385"]
+
+[ext_resource type="Script" path="res://scenes/items/room_check/RoomCheck.cs" id="1_in1w2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ur3y6"]
+size = Vector2(62, 40)
+
+[node name="RoomCheck" type="Node2D"]
+script = ExtResource("1_in1w2")
+
+[node name="ExitArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitArea"]
+position = Vector2(32, 10)
+shape = SubResource("RectangleShape2D_ur3y6")
+debug_color = Color(0, 0.701961, 0.0901961, 0.419608)
+
+[node name="EntranceArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EntranceArea"]
+position = Vector2(32, 44)
+shape = SubResource("RectangleShape2D_ur3y6")
+debug_color = Color(0.701961, 0, 0.027451, 0.419608)
+
+[connection signal="body_exited" from="ExitArea" to="." method="_on_exit_area_body_exited"]
+[connection signal="body_entered" from="EntranceArea" to="." method="_on_entrance_area_body_entered"]
+[connection signal="body_exited" from="EntranceArea" to="." method="_on_entrance_area_body_exited"]

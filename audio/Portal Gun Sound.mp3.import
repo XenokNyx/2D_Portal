@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cuwyd48c4p1ma"
+path="res://.godot/imported/Portal Gun Sound.mp3-912fce9aeef967910c950f2291e123f7.mp3str"
+
+[deps]
+
+source_file="res://audio/Portal Gun Sound.mp3"
+dest_files=["res://.godot/imported/Portal Gun Sound.mp3-912fce9aeef967910c950f2291e123f7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

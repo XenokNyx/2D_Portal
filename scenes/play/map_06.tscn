@@ -1,0 +1,82 @@
+[gd_scene load_steps=10 format=3 uid="uid://b8tol4udgxjgy"]
+
+[ext_resource type="PackedScene" uid="uid://cmw5ag0xil5ap" path="res://scenes/play/map_base.tscn" id="1_p34gq"]
+[ext_resource type="PackedScene" uid="uid://bhgf4pqsr5lkj" path="res://scenes/play/map_07.tscn" id="2_rwuid"]
+[ext_resource type="PackedScene" uid="uid://wvpa05ugcv0r" path="res://scenes/items/box/box.tscn" id="2_wgiv2"]
+[ext_resource type="PackedScene" uid="uid://dhb14ncey66s4" path="res://scenes/items/button/button.tscn" id="3_ymb0m"]
+[ext_resource type="PackedScene" uid="uid://dmn1jcpyyhnj2" path="res://scenes/items/door/door.tscn" id="4_iw2sx"]
+[ext_resource type="PackedScene" uid="uid://be4b2nct1p18x" path="res://scenes/items/field/field.tscn" id="5_bmaif"]
+[ext_resource type="PackedScene" uid="uid://ddtet4f5ld385" path="res://scenes/items/room_check/room_check.tscn" id="7_kp64n"]
+[ext_resource type="PackedScene" uid="uid://c303xdl11wais" path="res://scenes/items/cable/Cable.tscn" id="8_j8t3n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3p5uf"]
+size = Vector2(64, 48)
+
+[node name="map_base" instance=ExtResource("1_p34gq")]
+
+[node name="TileMap2" parent="." index="0"]
+layer_0/tile_data = PackedInt32Array(65535, 131072, 0, 0, 65536, 1, -65536, 65536, 2, 1, 0, 3, 65537, 196608, 1, 65536, 131072, 1, 131071, 0, 3, 65534, 131072, 2, 196606, 131072, 1, 131070, 0, 2, 131072, 65536, 3, 196607, 131072, 1, 131074, 65536, 1, 131073, 196608, 1, 65538, 196608, 2, 2, 65536, 1, -2, 196608, 3, -65534, 196608, 3, -65535, 0, 3, -1, 131072, 1, -65538, 131072, 2, -131070, 0, 1, -131071, 65536, 3, -131072, 131072, 3, -65537, 131072, 0, -196608, 131072, 1, -196610, 65536, 3, -262143, 131072, 3, -262144, 131072, 0, -196609, 0, 1, -262142, 131072, 3, -327678, 0, 0, -458750, 196608, 1, -393214, 65536, 3, -524286, 0, 0, -458754, 131072, 1, -458753, 131072, 0, -524288, 65536, 3, -524287, 0, 1, -262146, 196608, 3, -327682, 0, 3, -393218, 0, 1, -393217, 0, 0, -262145, 131072, 0, -327681, 131072, 1, -327679, 196608, 1, -327680, 196608, 2, -458751, 65536, 3, -393215, 196608, 3, -458752, 131072, 1, -393216, 196608, 0, -196611, 196608, 1, -393219, 196608, 2, -327683, 0, 0, -262147, 131072, 2, -458755, 196608, 1, -393220, 65536, 1, -262148, 0, 3, -327684, 65536, 3, -196612, 131072, 0, -458756, 65536, 2, -65540, 131072, 2, 65532, 0, 0, -4, 196608, 2, 131068, 196608, 3, -65541, 131072, 1, -65542, 131072, 1, -6, 131072, 3, 65530, 65536, 0, 131066, 196608, 0, 131067, 0, 0, 65531, 131072, 1, -5, 131072, 3, -393213, 65536, 0, -393212, 196608, 3, -458747, 196608, 0, -327675, 196608, 1, -393211, 65536, 3, -327673, 131072, 0, -327674, 0, 1, -327672, 131072, 2, -458744, 131072, 2, -393208, 0, 2, -458746, 131072, 1, -458745, 0, 2, -393210, 0, 0, -393209, 196608, 2, -131076, 65540, 2)
+layer_1/tile_data = PackedInt32Array(-131077, 196609, 6, -131079, 65537, 4, -131078, 131073, 7, -7, 1, 1, -65543, 1, 1703937, 131065, 1, 1, 65529, 1, 1, 196601, 65537, 2, 196602, 131073, 3, 196605, 196609, 5, 196604, 131073, 917507, 196603, 131073, 3, 131069, 1, 5, -3, 1, 5, 65533, 1, 5, -131075, 65537, 4, -65539, 1, 5, -131074, 131073, 7, -131073, 196609, 7, -196607, 65537, 7, -196605, 196609, 5, -196606, 131073, 7, -327677, 524289, 4, 3, 1, 1, -65533, 1, 1, -131069, 1, 1703937, -262141, 262145, 6, 196611, 196609, 2, 131075, 1, 1, 65539, 1, 1, 196610, 131073, 3, 262142, 131073, 851971, 262143, 131073, 3, 196608, 131073, 3, 196609, 131073, 3, 262141, 65537, 6, -327676, 720897, 4, -262140, 393217, 7, -262136, 131073, 7, -262137, 131073, 7, -262138, 131073, 7, -262139, 131073, 7, -262135, 196609, 6, -393207, 1, 5, -327671, 1, 5, -524279, 196609, 4, -458743, 1, 5, -524280, 131073, 7, -524284, 393217, 4, -524283, 131073, 7, -524282, 131073, 7, -524281, 131073, 7, -524285, 262145, 5, -458748, 720897, 7, -458749, 524289, 7, -589821, 196609, 4, -589824, 131073, 3, -589823, 131073, 917507, -589822, 131073, 7, -524293, 65537, 4, -524292, 131073, 7, -524291, 131073, 7, -524290, 131073, 7, -524289, 131073, 851971, -458757, 1, 5, -262149, 1, 5, -327685, 1, 5, -393221, 1, 5, -196613, 1, 5)
+
+[node name="Elevator" parent="." index="1"]
+position = Vector2(448, -384)
+nextMap = ExtResource("2_rwuid")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Spikes" index="0"]
+position = Vector2(-224, -160)
+shape = SubResource("RectangleShape2D_3p5uf")
+debug_color = Color(0.701961, 0.027451, 0, 0.419608)
+
+[node name="Box" parent="." index="3" instance=ExtResource("2_wgiv2")]
+position = Vector2(-292, 44)
+
+[node name="Box2" parent="." index="4" instance=ExtResource("2_wgiv2")]
+position = Vector2(142, 97)
+
+[node name="Button" parent="." index="5" instance=ExtResource("3_ymb0m")]
+position = Vector2(-128, -64)
+
+[node name="Button2" parent="." index="6" instance=ExtResource("3_ymb0m")]
+position = Vector2(-192, -448)
+
+[node name="Button3" parent="." index="7" instance=ExtResource("3_ymb0m")]
+position = Vector2(-192, -320)
+
+[node name="Door" parent="." index="8" instance=ExtResource("4_iw2sx")]
+position = Vector2(0, -192)
+_listeningPaths = Array[NodePath]([NodePath("../Button")])
+
+[node name="Door2" parent="." index="9" instance=ExtResource("4_iw2sx")]
+position = Vector2(256, -384)
+rotation = 1.5708
+_listeningPaths = Array[NodePath]([NodePath("../Button2"), NodePath("../Button3"), NodePath("../RoomCheck")])
+
+[node name="Field" parent="." index="10" instance=ExtResource("5_bmaif")]
+position = Vector2(320, -384)
+rotation = 1.5708
+
+[node name="RoomCheck" parent="." index="11" instance=ExtResource("7_kp64n")]
+position = Vector2(256, -384)
+rotation = 1.5708
+_defaultState = true
+
+[node name="Cable" parent="." index="12" instance=ExtResource("8_j8t3n")]
+position = Vector2(-70.006, 0)
+scale = Vector2(1.17241, 1)
+points = PackedVector2Array(0, 0, 53.4118, 0, 53.4118, -128)
+_listeningPaths = Array[NodePath]([NodePath("../Button")])
+
+[node name="Cable2" parent="." index="13" instance=ExtResource("8_j8t3n")]
+position = Vector2(-128, -261)
+points = PackedVector2Array(0, 0, 128, 0, 128, -128)
+_listeningPaths = Array[NodePath]([NodePath("../Button3")])
+
+[node name="Cable3" parent="." index="14" instance=ExtResource("8_j8t3n")]
+position = Vector2(-128, -389)
+points = PackedVector2Array(0, 0, 128, 0)
+_listeningPaths = Array[NodePath]([NodePath("../Button2")])
+
+[node name="Cable4" parent="." index="15" instance=ExtResource("8_j8t3n")]
+position = Vector2(0, -389)
+points = PackedVector2Array(0, 0, 192, 0)
+_listeningPaths = Array[NodePath]([NodePath("../Button2"), NodePath("../Button3")])

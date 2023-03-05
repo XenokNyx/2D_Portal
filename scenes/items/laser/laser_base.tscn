@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://du23tlot3f338"]
+
+[ext_resource type="Texture2D" uid="uid://d4ki3ldqi6kvp" path="res://assets/sprites/LaserBase.png" id="1_wlhpe"]
+[ext_resource type="Script" path="res://scenes/items/laser/Laser.cs" id="2_16fx1"]
+[ext_resource type="PackedScene" uid="uid://i6wbp4xc0chk" path="res://scenes/items/laser/laser.tscn" id="3_u1d6m"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nfsnq"]
+blend_mode = 1
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_81evr"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 2, 1)
+particle_flag_disable_z = true
+direction = Vector3(20, 0, 0)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 60.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_min = -720.0
+angle_max = 720.0
+scale_min = 2.0
+scale_max = 2.0
+
+[sub_resource type="Gradient" id="Gradient_fcqhi"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 0.210069, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_l5mws"]
+gradient = SubResource("Gradient_fcqhi")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_yo6od"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 2, 1)
+particle_flag_disable_z = true
+direction = Vector3(20, 0, 0)
+spread = 67.21
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 60.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_min = -720.0
+angle_max = 720.0
+scale_max = 5.0
+color_ramp = SubResource("GradientTexture1D_l5mws")
+
+[node name="LaserBase" type="Sprite2D" node_paths=PackedStringArray("_hitParticles")]
+z_index = 6
+texture = ExtResource("1_wlhpe")
+centered = false
+script = ExtResource("2_16fx1")
+_laserLinePck = ExtResource("3_u1d6m")
+_collisionMask = 21
+_hitParticles = NodePath("Particles")
+
+[node name="Particles" type="Node2D" parent="."]
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="Particles"]
+material = SubResource("CanvasItemMaterial_nfsnq")
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_81evr")
+lifetime = 0.3
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Particles"]
+amount = 20
+process_material = SubResource("ParticleProcessMaterial_yo6od")
+lifetime = 0.1

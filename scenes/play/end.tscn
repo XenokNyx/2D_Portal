@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://42v7p2i4x45c"]
+
+[sub_resource type="SystemFont" id="SystemFont_w3nim"]
+font_names = PackedStringArray("Arial")
+font_weight = 999
+
+[sub_resource type="LabelSettings" id="LabelSettings_uaxs0"]
+font = SubResource("SystemFont_w3nim")
+font_size = 150
+font_color = Color(0.388235, 0.392157, 0.407843, 1)
+
+[node name="End" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -943.5
+offset_top = -108.0
+offset_right = 943.5
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "THANKS FOR PLAYING"
+label_settings = SubResource("LabelSettings_uaxs0")

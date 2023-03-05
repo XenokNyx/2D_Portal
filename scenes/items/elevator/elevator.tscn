@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=3 uid="uid://de66pl804fj2u"]
+
+[ext_resource type="Script" path="res://scenes/items/elevator/Elevator.cs" id="1_8ldky"]
+[ext_resource type="Texture2D" uid="uid://fxlin0nl81sn" path="res://assets/sprites/Elevator.png" id="1_wf5py"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4dmwm"]
+radius = 14.1421
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kip7h"]
+size = Vector2(29, 13.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vfa7u"]
+size = Vector2(27.5, 14)
+
+[node name="Elevator" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_8ldky")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.584314)
+texture = ExtResource("1_wf5py")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+z_index = 200
+texture = ExtResource("1_wf5py")
+centered = false
+region_enabled = true
+region_rect = Rect2(64, 0, 64, 64)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 4096
+position = Vector2(42, 32)
+shape = SubResource("CircleShape2D_4dmwm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." groups=["BlockPortal"]]
+position = Vector2(32, 32)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 4096
+position = Vector2(0, 22)
+shape = SubResource("RectangleShape2D_kip7h")
+debug_color = Color(0.701961, 0, 0.0470588, 0.419608)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 4096
+position = Vector2(-1, -23)
+shape = SubResource("RectangleShape2D_kip7h")
+debug_color = Color(0.701961, 0, 0.0470588, 0.419608)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 4096
+position = Vector2(19, -15)
+rotation = 0.785398
+shape = SubResource("RectangleShape2D_kip7h")
+debug_color = Color(0.701961, 0, 0.0470588, 0.419608)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 4096
+position = Vector2(20, 14)
+rotation = -0.785398
+shape = SubResource("RectangleShape2D_kip7h")
+debug_color = Color(0.701961, 0, 0.0470588, 0.419608)
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+z_index = 4096
+position = Vector2(23, -0.75001)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_vfa7u")
+debug_color = Color(0.701961, 0, 0.0470588, 0.419608)

@@ -1,0 +1,25 @@
+[gd_scene load_steps=7 format=3 uid="uid://cdj7wff235la5"]
+
+[ext_resource type="PackedScene" uid="uid://wvpa05ugcv0r" path="res://scenes/items/box/box.tscn" id="1_mt4wa"]
+[ext_resource type="Texture2D" uid="uid://dekqk3wc8eqr1" path="res://assets/sprites/CubeLaser.png" id="2_nvbxi"]
+[ext_resource type="Shader" path="res://assets/shaders/dissolve.gdshader" id="2_q164v"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hyfle"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_mmo1m"]
+noise = SubResource("FastNoiseLite_hyfle")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_whmlt"]
+resource_local_to_scene = true
+shader = ExtResource("2_q164v")
+shader_parameter/dissolveVal = 0.0
+shader_parameter/borderColor = Color(0, 0.00392157, 0.0745098, 1)
+shader_parameter/borderSize = 0.2
+shader_parameter/noise = SubResource("NoiseTexture2D_mmo1m")
+
+[node name="LaserBox" groups=["LaserBox"] instance=ExtResource("1_mt4wa")]
+angular_damp = 25.0
+
+[node name="Sprite" parent="." index="0"]
+material = SubResource("ShaderMaterial_whmlt")
+texture = ExtResource("2_nvbxi")

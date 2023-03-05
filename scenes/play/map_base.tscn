@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmw5ag0xil5ap"]
+
+[ext_resource type="Script" path="res://scenes/play/MapData.cs" id="1_cocsd"]
+[ext_resource type="TileSet" uid="uid://cvj1si3xxea14" path="res://assets/tileMaps/PortalTileSet.tres" id="1_nt6b6"]
+[ext_resource type="PackedScene" uid="uid://de66pl804fj2u" path="res://scenes/items/elevator/elevator.tscn" id="3_oqbfh"]
+[ext_resource type="Script" path="res://scenes/items/SpikesArea.cs" id="4_84awp"]
+
+[node name="map_base" type="Node2D"]
+script = ExtResource("1_cocsd")
+
+[node name="TileMap2" type="TileMap" parent="."]
+tile_set = ExtResource("1_nt6b6")
+format = 2
+layer_0/name = "Floor"
+layer_1/name = "Walls"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array()
+
+[node name="Elevator" parent="." instance=ExtResource("3_oqbfh")]
+
+[node name="Spikes" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("4_84awp")

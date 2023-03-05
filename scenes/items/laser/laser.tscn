@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://i6wbp4xc0chk"]
+
+[ext_resource type="Texture2D" uid="uid://hawi7qhpsrgd" path="res://assets/sprites/Laser.png" id="1_td1jo"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xcpi7"]
+blend_mode = 1
+
+[node name="Laser" type="Line2D"]
+show_behind_parent = true
+z_index = 5
+z_as_relative = false
+material = SubResource("CanvasItemMaterial_xcpi7")
+points = PackedVector2Array(-1, 32, 220, 32)
+width = 64.0
+texture = ExtResource("1_td1jo")
+texture_mode = 1

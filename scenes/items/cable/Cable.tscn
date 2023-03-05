@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://c303xdl11wais"]
+
+[ext_resource type="Texture2D" uid="uid://r36oc0aax74n" path="res://assets/sprites/Cable.png" id="1_w2r2e"]
+[ext_resource type="Script" path="res://scenes/items/cable/Cable.cs" id="2_topxl"]
+[ext_resource type="Texture2D" uid="uid://cva2g0n681eef" path="res://assets/sprites/CableStart.png" id="3_sjhoy"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_rl1w0"]
+
+[node name="Cable" type="Line2D"]
+material = SubResource("CanvasItemMaterial_rl1w0")
+points = PackedVector2Array(0, 0, 100, 0)
+width = 8.0
+texture = ExtResource("1_w2r2e")
+texture_mode = 1
+script = ExtResource("2_topxl")
+_dissabledColor = Color(0.396078, 0, 0.0156863, 1)
+_enabledColor = Color(1, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("CanvasItemMaterial_rl1w0")
+texture = ExtResource("3_sjhoy")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5d2m0jiuf4h8"]
+
+[ext_resource type="PackedScene" uid="uid://d2d6x2dwfgh2v" path="res://scenes/player/player.tscn" id="1_s635a"]
+[ext_resource type="Script" path="res://scenes/player/CameraPlayer.cs" id="2_ybq7f"]
+
+[node name="player_base" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_s635a")]
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("_player")]
+process_priority = 1
+ignore_rotation = false
+script = ExtResource("2_ybq7f")
+_player = NodePath("../Player")

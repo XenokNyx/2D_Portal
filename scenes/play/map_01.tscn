@@ -1,0 +1,101 @@
+[gd_scene load_steps=14 format=3 uid="uid://bgce08uenn2wf"]
+
+[ext_resource type="PackedScene" uid="uid://cmw5ag0xil5ap" path="res://scenes/play/map_base.tscn" id="1_rbwbd"]
+[ext_resource type="PackedScene" uid="uid://dhb14ncey66s4" path="res://scenes/items/button/button.tscn" id="4_qsj82"]
+[ext_resource type="PackedScene" uid="uid://wvpa05ugcv0r" path="res://scenes/items/box/box.tscn" id="5_ruuji"]
+[ext_resource type="PackedScene" uid="uid://dmn1jcpyyhnj2" path="res://scenes/items/door/door.tscn" id="6_p55la"]
+[ext_resource type="AudioStream" uid="uid://cuwyd48c4p1ma" path="res://audio/Portal Gun Sound.mp3" id="7_8llqv"]
+[ext_resource type="PackedScene" uid="uid://ddtet4f5ld385" path="res://scenes/items/room_check/room_check.tscn" id="7_t2tqn"]
+[ext_resource type="Script" path="res://scenes/player/AutoPortal.cs" id="8_avm50"]
+[ext_resource type="Texture2D" uid="uid://w4pt61l6kj24" path="res://assets/sprites/keys.png" id="9_8g4l1"]
+[ext_resource type="Texture2D" uid="uid://bc4jf8t54pf7k" path="res://assets/sprites/keys_2.png" id="10_dvacs"]
+[ext_resource type="PackedScene" uid="uid://upog3bjt7ye0" path="res://scenes/play/map_02.tscn" id="10_r6vis"]
+[ext_resource type="PackedScene" uid="uid://be4b2nct1p18x" path="res://scenes/items/field/field.tscn" id="11_bcem1"]
+[ext_resource type="Texture2D" uid="uid://m7cdkjrx0eu2" path="res://assets/sprites/keys_3.png" id="11_v370o"]
+[ext_resource type="PackedScene" uid="uid://c303xdl11wais" path="res://scenes/items/cable/Cable.tscn" id="13_7407w"]
+
+[node name="map_base" instance=ExtResource("1_rbwbd")]
+CanShootPortals = false
+
+[node name="TileMap2" parent="." index="0"]
+layer_0/tile_data = PackedInt32Array(458759, 0, 3, 393223, 0, 0, 327687, 131072, 2, 262151, 131072, 0, 196615, 65536, 1, 131079, 131072, 0, 65543, 131072, 3, 7, 131072, 1, -65529, 131072, 0, 458758, 196608, 1, 393222, 196608, 0, 327686, 196608, 3, 262150, 0, 1, 196614, 65536, 3, 131078, 196608, 2, 65542, 131072, 0, 6, 0, 3, -65530, 196608, 0, 458757, 0, 1, 393221, 0, 0, 327685, 196608, 3, 262149, 131072, 1, 196613, 65536, 0, 131077, 131072, 1, 65541, 196608, 2, 5, 65536, 0, -65531, 0, 3, 458756, 131072, 2, 393220, 196608, 2, 327684, 196608, 3, 262148, 196608, 2, 196612, 65536, 2, 131076, 65536, 1, 65540, 196608, 2, 4, 196608, 3, -65532, 65536, 1, 458755, 196608, 0, 393219, 0, 2, 327683, 0, 0, 458754, 0, 0, 393218, 65536, 1, 327682, 196608, 2, 196610, 0, 2, 131074, 196608, 3, 65538, 65536, 1, 2, 131072, 2, -65534, 131072, 0, 458753, 131072, 2, 393217, 65536, 0, 327681, 196608, 1, 196609, 131072, 0, 131073, 196608, 3, 65537, 131072, 0, 1, 0, 0, -65535, 0, 3, 458752, 196608, 3, 393216, 196608, 3, 327680, 131072, 3, 196608, 196608, 3, 131072, 196608, 2, 65536, 131072, 3, 0, 0, 3, -65536, 0, 0, 524287, 196608, 3, 458751, 0, 3, 393215, 196608, 1, 262143, 131072, 2, 196607, 196608, 2, 131071, 0, 2, 65535, 0, 1, -1, 131072, 3, -131073, 196608, 1, -196609, 131072, 1, -327681, 0, 2, 524286, 0, 2, 458750, 196608, 3, 393214, 0, 2, 262142, 196608, 2, 196606, 65536, 1, 131070, 131072, 1, 65534, 0, 0, -2, 131072, 1, -131074, 0, 2, -196610, 0, 0, -327682, 65536, 1, 524285, 196608, 2, 458749, 196608, 0, 393213, 131072, 0, 262141, 65536, 0, 196605, 131072, 2, 131069, 196608, 1, 65533, 196608, 2, -3, 131072, 3, -131075, 0, 0, -196611, 65536, 2, 524284, 0, 0, 458748, 65536, 0, 393212, 196608, 1, 262140, 0, 2, 196604, 0, 3, 131068, 65536, 0, 65532, 0, 3, -4, 0, 1, -131076, 131072, 3, -196612, 196608, 3, -327684, 65536, 1, 524283, 0, 0, 458747, 65536, 1, 393211, 196608, 0, -131077, 131072, 1, -196613, 0, 3, -262149, 0, 1, -327685, 65536, 2, 524282, 131072, 0, 458746, 0, 2, 393210, 196608, 2, 327674, 196608, 0, 262138, 131072, 0, 196602, 131072, 2, 131066, 196608, 3, 65530, 65536, 3, -6, 196608, 3, -65542, 65536, 1, -131078, 196608, 1, -196614, 196608, 1, -327686, 196608, 0, 524281, 65536, 0, 458745, 196608, 2, 393209, 196608, 1, 327673, 65536, 3, 262137, 0, 1, 196601, 0, 0, 131065, 65536, 0, 65529, 65536, 1, -7, 0, 1, -65543, 131072, 3, -131079, 65536, 1, -196615, 196608, 3, -327687, 0, 2, 524280, 131072, 2, 458744, 131072, 2, 393208, 0, 0, 327672, 196608, 2, 262136, 0, 0, 196600, 0, 0, 131064, 0, 3, 65528, 131072, 2, -8, 131072, 1, -65544, 65536, 1, -131080, 131072, 1, -196616, 196608, 2, -458750, 0, 1, -524286, 131072, 2, -589822, 0, 1, -458751, 65536, 3, -524287, 131072, 0, -589823, 65536, 2, -524288, 0, 1, -393217, 131072, 0, -458753, 0, 1, -524289, 131072, 3, -589825, 196608, 0, -393218, 0, 2, -458754, 131072, 3, -524290, 0, 3, -589826, 65536, 1, -458755, 0, 2, -524291, 0, 3, -589827, 65536, 0, -393220, 196608, 2, -524292, 65536, 3, -393221, 131072, 3, -524293, 196608, 2, -393222, 65536, 1, -458758, 0, 1, -589830, 196608, 2, -393223, 65536, 0, -458759, 65536, 2, -524295, 196608, 0, -589831, 196608, 3, -458747, 0, 3, -524283, 65536, 2, -589819, 0, 2, -458748, 0, 2, -524284, 196608, 2, -589820, 196608, 0, -458749, 196608, 1, -524285, 0, 3, -589821, 196608, 1, -65540, 196608, 0, -65541, 65536, 2, -5, 196608, 2, 196603, 0, 3, 131067, 131072, 2, 65531, 0, 3, 327675, 0, 2, 262139, 0, 2, 327677, 131072, 3, 327676, 131072, 1, 262145, 196608, 0, 262144, 65536, 2, 327679, 65536, 0, 327678, 0, 1, 262146, 0, 3, 262147, 0, 3, 131075, 0, 2, 196611, 0, 0, 3, 131072, 3, 65539, 0, 0, -65533, 0, 2, -589828, 0, 0, -589829, 0, 0, -524294, 196608, 1, -458756, 0, 3, -393219, 131072, 2, -327683, 196608, 1, -458757, 196608, 1)
+layer_1/tile_data = PackedInt32Array(-262150, 196609, 3, -262151, 131073, 3, -262153, 65537, 0, -262152, 131073, 2, -131081, 1, 1, -196617, 1, 1, 65527, 1, 1, -9, 1, 1, -65545, 1, 1, 196599, 1, 1, 131063, 1, 1, 262135, 1, 1, 327671, 1, 1, 458743, 1, 1, 393207, 1, 1, 524279, 1, 1, 589815, 65537, 2, 589817, 131073, 3, 589816, 131073, 3, 589821, 131073, 3, 589820, 131073, 3, 589819, 131073, 3, 589818, 131073, 3, 524291, 131073, 3, 524290, 131073, 3, 524289, 131073, 3, 524288, 131073, 3, 589823, 131073, 3, 589822, 131073, 3, 524294, 131073, 3, 524293, 131073, 3, 524292, 131073, 3, 524295, 131073, 3, 524296, 196609, 2, 458760, 1, 1, 393224, 1, 1, 327688, 1, 1, 8, 1, 1, 65544, 1, 1, -131064, 196609, 0, -65528, 1, 1, 262152, 1, 1, 196616, 1, 1, 131080, 1, 1, -131066, 131073, 3, -131065, 131073, 3, -131070, 131073, 3, -131069, 131073, 3, -131068, 131073, 3, -131067, 131073, 3, -65537, 131073, 3, -131072, 131073, 2, -131071, 131073, 3, -65539, 65537, 3, -65538, 131073, 3, -262148, 65537, 3, -262146, 131073, 3, -262147, 131073, 3, -327680, 196609, 1, -262145, 131073, 3, -196608, 1, 1, -262144, 1, 1, -393216, 65537, 1, -458752, 1, 0, -393214, 131073, 3, -393215, 131073, 3, -393211, 131073, 3, -393212, 131073, 3, -393213, 131073, 3, -393210, 196609, 2, -524282, 1, 1, -458746, 1, 1, -589818, 1, 1, -655355, 131073, 3, -655356, 131073, 3, -655358, 131073, 3, -655357, 131073, 3, -655360, 65537, 1, -655359, 131073, 3, -589824, 1, 2, -655354, 196609, 0, -720896, 196609, 0, -655361, 131073, 3, -655363, 131073, 3, -655362, 131073, 3, -655366, 131073, 3, -655365, 131073, 3, -655364, 131073, 3, -655368, 65537, 0, -655367, 131073, 3, -524296, 1, 1, -589832, 1, 1, -393224, 1, 1, -458760, 1, 1, -327688, 1, 1, -65540, 65538, 3, -65541, 65538, 0, -5, 2, 1, 131067, 2, 1, 65531, 2, 1, 262139, 2, 1, 196603, 2, 1, 327675, 65538, 1, 327677, 65538, 3, 327676, 65538, 3, 262144, 65538, 3, 327679, 65538, 3, 327678, 65538, 3, 262146, 65538, 3, 262145, 65538, 3, 262147, 131074, 1, 131075, 2, 1, 196611, 2, 1, 3, 2, 327681, 65539, 2, 1, -65533, 2, 393217)
+
+[node name="Elevator" parent="." index="1"]
+position = Vector2(192, -512)
+nextMap = ExtResource("10_r6vis")
+
+[node name="RoomCheck" parent="." index="2" instance=ExtResource("7_t2tqn")]
+position = Vector2(-320, -320)
+_defaultState = true
+
+[node name="Door" parent="." index="3" instance=ExtResource("6_p55la")]
+position = Vector2(-320, -320)
+_listeningPaths = Array[NodePath]([NodePath("../RoomCheck")])
+
+[node name="Door2" parent="." index="4" instance=ExtResource("6_p55la")]
+position = Vector2(64, -512)
+rotation = 1.5708
+_listeningPaths = Array[NodePath]([NodePath("../Button")])
+
+[node name="Button" parent="." index="5" instance=ExtResource("4_qsj82")]
+position = Vector2(-384, -448)
+
+[node name="Box" parent="." index="6" instance=ExtResource("5_ruuji")]
+position = Vector2(-96, -552)
+
+[node name="ShootPortalAudio" type="AudioStreamPlayer2D" parent="." index="7"]
+stream = ExtResource("7_8llqv")
+
+[node name="AutoPortal" type="Node" parent="." index="8" node_paths=PackedStringArray("_portalSound")]
+script = ExtResource("8_avm50")
+_targetsPaths = Array[NodePath]([NodePath("Target_01")])
+_seconds = PackedFloat32Array(5)
+_portalSound = NodePath("../ShootPortalAudio")
+
+[node name="Target_01" type="Node2D" parent="AutoPortal" index="0"]
+position = Vector2(128, -64)
+
+[node name="AutoPortal2" type="Node" parent="." index="9" node_paths=PackedStringArray("_portalSound")]
+script = ExtResource("8_avm50")
+_portalInd = 1
+_targetsPaths = Array[NodePath]([NodePath("Target_01")])
+_seconds = PackedFloat32Array(5)
+_portalSound = NodePath("../ShootPortalAudio")
+
+[node name="Target_01" type="Node2D" parent="AutoPortal2" index="0"]
+position = Vector2(512, 128)
+rotation = 1.5708
+
+[node name="Tutorial" type="Node2D" parent="." index="10"]
+modulate = Color(1, 1, 1, 0.501961)
+
+[node name="Sprite2D" type="Sprite2D" parent="Tutorial" index="0"]
+position = Vector2(-161, 93)
+texture = ExtResource("9_8g4l1")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Tutorial" index="1"]
+position = Vector2(88, 126)
+texture = ExtResource("10_dvacs")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Tutorial" index="2"]
+position = Vector2(-202, -551)
+rotation = -1.5708
+texture = ExtResource("11_v370o")
+
+[node name="Field2" parent="." index="12" instance=ExtResource("11_bcem1")]
+position = Vector2(128, -576)
+rotation = 1.5708
+
+[node name="Field3" parent="." index="13" instance=ExtResource("11_bcem1")]
+position = Vector2(128, -512)
+rotation = 1.5708
+
+[node name="Field4" parent="." index="14" instance=ExtResource("11_bcem1")]
+position = Vector2(128, -448)
+rotation = 1.5708
+
+[node name="Cable" parent="." index="15" instance=ExtResource("13_7407w")]
+position = Vector2(-320, -384)
+points = PackedVector2Array(0, 0, 256, 0, 256, -55, 319, -55)
+_listeningPaths = Array[NodePath]([NodePath("../Button")])
